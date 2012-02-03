@@ -17,23 +17,32 @@
         
 
     </head>
-    <body style="background-color:#333333 !important;">
-<div data-role="page">    
-    <div data-role="content">
+    <body style="background-color:#333333 !important;" onload="populateDays('');">
+<div data-role="page" data-theme="a">    
+    <div data-role="content" align="center">
     <h2>Have you smoked today?</h2>
-        <a href="#yes" data-role="button" data-icon="check" data-theme="a">Yes</a>
-        <a href="#no" data-role="button" data-icon="check" data-theme="a">No</a>	
+        <a href="#yes" data-role="button" data-icon="check" data-theme="c" onclick="populateData('yes');">Yes</a>
+        <a href="#no" data-role="button" data-icon="check" data-theme="c" onclick="populateData('no');">No</a>	
     </div><!-- /content -->
+    <div data-role="footer" align="center">
+    <p>You have quit for <em id="days"></em> days!</p>
+    </div><!-- /footer -->
 </div><!-- /page -->
-<div id="yes" data-role="page">    
+<div id="yes" data-role="page" data-theme="a">    
     <div data-role="content">
     <p id="yes-quote"></p>
     </div><!-- /content -->
+    <div data-role="footer" align="center">
+    <p>You have quit for <em id="yes-days"></em> days!</p>
+    </div><!-- /footer -->
 </div><!-- /page -->
-<div id="no" data-role="page">    
+<div id="no" data-role="page" data-theme="a">    
     <div data-role="content">
     <p id="no-quote"></p>	
     </div><!-- /content -->
+    <div data-role="footer" align="center">
+    <p>You have quit for <em id="no-days"></em> days!</p>
+    </div><!-- /footer -->
 </div><!-- /page -->
     </body>
 </html>
