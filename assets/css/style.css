@@ -1,0 +1,10 @@
+﻿.footer {
+  position: absolute !important;
+  bottom: 0;
+  }
+
+.options {
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+  }

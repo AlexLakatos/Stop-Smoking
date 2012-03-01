@@ -3,7 +3,8 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <title>Stop Smoking</title>
-        <link rel="stylesheet" href="assets/lib/jquery.mobile-1.0.1.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="assets/lib/jquery.mobile-1.0.1.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="assets/lib/jquery.mobile.structure-1.0.1.css" type="text/css" media="screen" />
         
         <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
@@ -24,24 +25,36 @@
         <a href="#yes" data-role="button" data-icon="check" data-theme="c" onclick="populateData('yes');">Yes</a>
         <a href="#no" data-role="button" data-icon="check" data-theme="c" onclick="populateData('no');">No</a>	
     </div><!-- /content -->
-    <div data-role="footer" align="center">
-    <p>You have quit for <em id="days"></em> days!</p>
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+    <div data-role="footer" class="footer" align="center">
+    <p>Days Quit: <em id="days"></em></p>
     </div><!-- /footer -->
 </div><!-- /page -->
 <div id="yes" data-role="page" data-theme="a">    
-    <div data-role="content">
+    <div data-role="content" align="center">
     <p id="yes-quote"></p>
     </div><!-- /content -->
-    <div data-role="footer" align="center">
-    <p>You have quit for <em id="yes-days"></em> days!</p>
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+    <div data-role="footer" class="footer" align="center">
+    <p>Days Quit: <em id="yes-days"></em></p>
     </div><!-- /footer -->
 </div><!-- /page -->
 <div id="no" data-role="page" data-theme="a">    
-    <div data-role="content">
+    <div data-role="content" align="center">
     <p id="no-quote"></p>	
     </div><!-- /content -->
-    <div data-role="footer" align="center">
-    <p>You have quit for <em id="no-days"></em> days!</p>
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+    <div data-role="footer" class="footer" align="center">
+    <p>Days Quit:<em id="no-days"></em></p>
+    </div><!-- /footer -->
+</div><!-- /page -->
+<div id="options" data-role="page" data-theme="c">    
+    <div data-role="content" align="center">
+    <p id="options-quote"></p>	
+    </div><!-- /content -->
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+    <div data-role="footer" class="footer" align="center">
+    <p>Days Quit:<em id="options-days"></em></p>
     </div><!-- /footer -->
 </div><!-- /page -->
     </body>
