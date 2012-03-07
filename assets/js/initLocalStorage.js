@@ -23,4 +23,21 @@ function resetDays() {
   storage.setItem('days', 0);
 }
 
+function addDays(i) {
+  storage.setItem('days', parseInt(storage.getItem('days')) + parseInt(i));
+  populateDays('options');
+}
+
+function goBack() {
+  history.back();
+  populateDays("");
+  populateDays("no");
+  populateDays("yes");
+  populateDays("options");
+}
+
+function validateOptions(i) {
+  if (!isNaN(parseInt(i))) addDays(i);
+}
+
 init();

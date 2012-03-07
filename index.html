@@ -18,14 +18,14 @@
         
 
     </head>
-    <body style="background-color:#333333 !important;" onload="populateDays('');">
+    <body style="background-color:#333333 !important;" onLoad="populateDays('');">
 <div data-role="page" data-theme="a">    
     <div data-role="content" align="center">
     <h2>Have you smoked today?</h2>
-        <a href="#yes" data-role="button" data-icon="check" data-theme="c" onclick="populateData('yes');">Yes</a>
-        <a href="#no" data-role="button" data-icon="check" data-theme="c" onclick="populateData('no');">No</a>	
+        <a href="#yes" data-role="button" data-icon="check" data-theme="c" onClick="populateData('yes');">Yes</a>
+        <a href="#no" data-role="button" data-icon="check" data-theme="c" onClick="populateData('no');">No</a>	
     </div><!-- /content -->
-	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onClick="populateData('options');">Options</a></div>
     <div data-role="footer" class="footer" align="center">
     <p>Days Quit: <em id="days"></em></p>
     </div><!-- /footer -->
@@ -34,7 +34,7 @@
     <div data-role="content" align="center">
     <p id="yes-quote"></p>
     </div><!-- /content -->
-	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onClick="populateData('options');">Options</a></div>
     <div data-role="footer" class="footer" align="center">
     <p>Days Quit: <em id="yes-days"></em></p>
     </div><!-- /footer -->
@@ -43,18 +43,22 @@
     <div data-role="content" align="center">
     <p id="no-quote"></p>	
     </div><!-- /content -->
-	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onClick="populateData('options');">Options</a></div>
     <div data-role="footer" class="footer" align="center">
-    <p>Days Quit:<em id="no-days"></em></p>
+    <p>Days Quit: <em id="no-days"></em></p>
     </div><!-- /footer -->
 </div><!-- /page -->
 <div id="options" data-role="page" data-theme="c">    
     <div data-role="content" align="center">
-    <p id="options-quote"></p>	
+    <form name="addForm">
+    <label for="add-days">Extra quit days:</label>
+    <input type="text" name="addInput" id="add-days" value=""  />	
+    <a href="#" data-role="button" data-icon="plus" data-theme="c" onClick="validateOptions(document.forms.addForm.addInput.value);">Add</a>
+    </form>
     </div><!-- /content -->
-	<div class="options" align="center"><a href="#options" data-role="button" data-icon="gear" data-theme="c" onclick="populateData('options');">Options</a></div>
+	<div class="options" align="center"><a href="#" data-role="button" data-icon="back" data-theme="c" onClick="goBack();">Back</a></div>
     <div data-role="footer" class="footer" align="center">
-    <p>Days Quit:<em id="options-days"></em></p>
+    <p>Days Quit: <em id="options-days"></em></p>
     </div><!-- /footer -->
 </div><!-- /page -->
     </body>
