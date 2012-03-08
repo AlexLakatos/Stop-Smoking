@@ -180,7 +180,8 @@ function init() {
     storage.setItem('day', firstDate.getDate());
     storage.setItem('month', firstDate.getMonth());
     storage.setItem('year', firstDate.getFullYear());
-    storage.setItem('firstRun', true);
+	storage.setItem('lastDate', firstDate);
+	storage.setItem('firstRun', true);
 	storage.setItem('noIndex', 0);
 	storage.setItem('yesIndex', 0);
 	storage.setItem('no', JSON.stringify(no));
@@ -200,9 +201,12 @@ function increaseDays(i) {
 }
 
 function getCurrentIndex(flag) {
-  if (parseInt(storage.getItem(flag + 'Index')) >= 85) randomizeMessages(flag);
+  return parseInt(storage.getItem(flag + 'Index')) - 1;
+}
+
+function increaseCurrentIndex(flag) {
+  if (parseInt(storage.getItem(flag + 'Index')) >= 86) randomizeMessages(flag);
   storage.setItem(flag + 'Index', parseInt(storage.getItem(flag + 'Index')) + 1);
-  return (parseInt(storage.getItem(flag + 'Index')) - 1);
 }
 
 function randomizeMessages(flag) {
